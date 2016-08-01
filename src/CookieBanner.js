@@ -60,6 +60,7 @@ export default class CookieBanner extends React.Component {
 
   componentDidMount() {
     this.addOnScrollListener();
+    this.addOnLeavePageListener();
   }
 
   addOnScrollListener = (props) => {
@@ -180,6 +181,10 @@ export default class CookieBanner extends React.Component {
 
   componentWillUnmount() {
     this.removeOnScrollListener();
+  },
+
+  addOnLeavePageListener(){
+    window.addEventListener('beforeunload', this.onAccept);
   }
 
 }
