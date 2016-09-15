@@ -116,7 +116,6 @@ export default class CookieBanner extends React.Component {
 
   onAccept = () => {
     const { cookie, cookieExpiration, cookiePath, onAccept } = this.props;
-
     cookieLite(cookie, true, this.getSecondsSinceExpiration(cookieExpiration), cookiePath);
     onAccept({ cookie });
 
