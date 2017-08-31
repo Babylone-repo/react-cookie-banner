@@ -180,7 +180,7 @@ export default class CookieBanner extends React.Component {
 
   componentWillUnmount() {
     this.removeOnScrollListener();
-  },
+  }
 
   addOnLeavePageListener(){
     if (window.attachEvent) {
