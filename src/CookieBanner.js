@@ -183,7 +183,11 @@ export default class CookieBanner extends React.Component {
   },
 
   addOnLeavePageListener(){
-    window.addEventListener('beforeunload', this.onAccept);
+    if (window.attachEvent) {
+      window.attachEvent('onbeforeunload', this.onAccept);
+    } else if (window.addEventListener) {
+      window.addEventListener('beforeunload', this.onAccept, false);
+    }
   }
 
 }
